@@ -1,0 +1,250 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-image: linear-gradient(to top,
+            rgba(0, 0, 0, 0.7),
+            rgba(23, 45, 78, 0.8),
+            rgba(0, 0, 0, 0.3)),
+        url("https://i.pinimg.com/736x/38/5c/8b/385c8bf9067f2b0b91246faa9be4d20d.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: rgb(255, 249, 249);
+    align-content: center;
+}
+
+.header .navbar {
+    width: 100%;
+    padding-block: 30px;
+    padding-inline: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header .navbar span {
+    font-size: 30 px;
+    font-weight: bold;
+}
+
+.header .navbar #menu {
+    display: flex;
+    gap: 40px;
+}
+
+.header .navbar #menu li {
+    list-style-type: none;
+}
+
+.header .navbar #menu li a {
+    text-decoration: none;
+    color: white;
+}
+
+.header .navbar #menu li a:hover {
+    color: rgb(24, 242, 75);
+}
+
+.header .content {
+    max-width: 60%;
+    margin: auto;
+    text-align: center;
+}
+
+.header .content h1 {
+    font-size: 60px;
+    margin-block: 15px;
+}
+
+.header .content p {
+    font-weight: lighter;
+}
+
+.header .content button {
+    margin-block: 20px;
+    padding-block: 15px;
+    padding-inline: 30px;
+    margin-inline: 10px;
+    border: none;
+    border-radius: 20px;
+}
+
+.header .content .buy {
+    background-color: #6ea802;
+}
+
+.header .content .view_gallery {
+    background-color: #d603c4;
+}
+
+.container {
+    max-width: 90%;
+    margin: auto;
+}
+
+/* Services section */
+#services {
+    padding-block: 30px;
+}
+
+#services h1 {
+    margin-bottom: 30px;
+    font-size: 35px;
+}
+
+#services .container h1 {
+    text-align: center;
+}
+
+#services .container .services {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    color: #001f14;
+}
+
+#services .container .card {
+    background-color: #cbe57d;
+    border-radius: 10px;
+    padding: 30px 20px;
+    text-align: center;
+    flex: 1;
+}
+
+#services .container .card h2 {
+    margin-bottom: 20px;
+}
+
+#services .container .card p {
+    display: -webkit-box;
+    
+    -webkit-line-clamp: 3;
+    
+    -webkit-box-orient: vertical;
+    
+    overflow: hidden;
+    
+    text-overflow: ellipsis;
+    
+    margin-top: 10px;
+   
+}
+
+
+
+/* Gallery section */
+#gallery .container h1 {
+    text-align: center;
+    font-size: 35px;
+    border-bottom: 2px solid yellowgreen;
+    padding-bottom: 20px;
+}
+
+#gallery .container .gallery_grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-block: 20px;
+}
+
+#gallery .container .gallery_grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#gallery .container .gallery_grid .card {
+    position: relative;
+    transition: all 0, 5s ease-in-out;
+}
+
+#gallery .container .gallery_grid .card::after {
+    content: "";
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
+
+}
+
+#gallery .container .gallery_grid .card:hover::after {
+    background-image: linear-gradient(to top,
+            rgba(0, 0, 0, 0.7),
+            rgba(0, 0, 0, 0.2));
+
+}
+
+#gallery .container .gallery_grid .card .content {
+    visibility: hidden;
+    color: white;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    z-index: 10;
+}
+
+#gallery .container .gallery_grid .card .content h2 {
+    font-size: 40px;
+}
+
+#gallery .container .gallery_grid .card .content p {
+    font-size: 14px;
+}
+
+#gallery .container .gallery_grid .card:hover .content {
+    visibility: visible;
+}
+
+#gallery .container .gallery_grid .card:nth-child(1) {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+#gallery .container .gallery_grid .card:nth-child(2) {
+    grid-column: span 2;
+}
+
+#gallery .container .gallery_grid .card:nth-child(6) {
+    grid-column: span 2;
+}
+
+#gallery .container .gallery_grid .card:nth-child(8) {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+#gallery .container .gallery_grid .card:nth-child(16) {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+@media (max-width: 768px) {
+    .header .navbar #menu {
+        display: none;
+    }
+
+    .header .content {
+        max-width: 80%;
+    }
+
+    #services .container .services {
+        flex-direction: column;
+    }
+
+    #gallery .container .gallery_grid {
+        grid-template-columns: 2fr;
+    }
+}
